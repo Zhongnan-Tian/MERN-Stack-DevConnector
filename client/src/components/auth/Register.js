@@ -25,6 +25,10 @@ class Register extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
+
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
   }
 
   onChange(e) {
