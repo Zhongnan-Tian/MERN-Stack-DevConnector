@@ -1,10 +1,15 @@
+.navbar {
+  border-bottom: #008ed6 3px solid;
+  opacity: 0.8;
+}
+
 img {
   width: 100%;
 }
 
 .landing {
   position: relative;
-  background: url("./img/showcase2.jpg") no-repeat;
+  background: url('./img/showcase2.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;

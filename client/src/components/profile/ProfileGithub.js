@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import CLIENT_SECRET from '../../env';
 
 class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientId: "b11e165710c3b62cf2f5",
-      clientSecret: "ef85df4a4a2758a48be0389112b6569c4df1f3a1",
+      clientId: 'b11e165710c3b62cf2f5',
+      clientSecret: CLIENT_SECRET,
       count: 5,
-      sort: "created: asc",
+      sort: 'created: asc',
       repos: []
     };
   }
@@ -38,9 +39,9 @@ class ProfileGithub extends Component {
         <div className="row">
           <div className="col-md-6">
             <h4>
-              <Link to={repo.html_url} className="text-info" target="_blank">
+              <a href={repo.html_url} className="text-info">
                 {repo.name}
-              </Link>
+              </a>
             </h4>
             <p>{repo.description}</p>
           </div>

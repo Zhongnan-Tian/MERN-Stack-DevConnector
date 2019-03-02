@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import ProfileHeader from "./ProfileHeader";
-import ProfileAbout from "./ProfileAbout";
-import ProfileCred from "./ProfileCred";
-import ProfileGithub from "./ProfileGithub";
-import Spinner from "../common/Spinner";
-import { getProfileByHandle } from "../../actions/profileActions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import ProfileHeader from './ProfileHeader';
+import ProfileAbout from './ProfileAbout';
+import ProfileCred from './ProfileCred';
+import ProfileGithub from './ProfileGithub';
+import Spinner from '../common/Spinner';
+import { getProfileByHandle } from '../../actions/profileActions';
 
 class Profile extends Component {
   componentDidMount() {
@@ -18,9 +18,20 @@ class Profile extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.profile.profile === null && this.props.profile.loading) {
-      this.props.history.push("/not-found");
+      this.props.history.push('/not-found');
+    }
+
+    //when user browses this page then logs out
+    if (nextProps.profile.profile === null && this.props.profile.profile) {
+      this.props.history.push('/');
     }
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.profile.profile === null) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   render() {
     const { profile, loading } = this.props.profile;
