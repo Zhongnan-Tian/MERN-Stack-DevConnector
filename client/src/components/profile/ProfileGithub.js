@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import CLIENT_SECRET from '../../env';
+
+import CLIENT_SECRET from '../../config/keys';
 
 class ProfileGithub extends Component {
   constructor(props) {
@@ -59,10 +60,11 @@ class ProfileGithub extends Component {
         </div>
       </div>
     ));
+
     return (
       <div ref="myRef">
         <hr />
-        <h3 className="mb-4">Latest Github Repos</h3>
+        <h3 className="text-center text-info mt-4 mb-3">Latest Github Repos</h3>
         {repoItems}
       </div>
     );

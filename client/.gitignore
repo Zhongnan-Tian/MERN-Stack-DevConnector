@@ -1,7 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # client secret
-/src/env.js
+/src/config/keys_dev.js
 
 # dependencies
 /node_modules
